@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+h1{
+	text-align: center;
+	font-family: 'Press Start 2P', monospace;
+  	font-size: 40px;              /* ajuste selon le besoin */
+  	line-height: 1.1;
+  	letter-spacing: 0.02em;
+  	text-transform: none;
+  	-webkit-font-smoothing: none; /* désactive l'anti-aliasing pour un rendu plus net/pixelisé */
+  	-moz-osx-font-smoothing: grayscale;
+  	text-rendering: optimizeSpeed;
+  	image-rendering: pixelated;
+  	color: black;
+	margin-top: 15;
+	}
+img{
+	width: 160px;
+	height: 175px;
+	position: absolute; 
+    left: 10px;         
+    top: 325px;     
+}
+img.player2{
+	width: 160px;
+	height: 175px;
+	position: absolute; 
+    left: 1750px;         
+    top: 325px;     
+}
+html{
+	background-image: url("backgroundimg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	}
+p{
+	color: white;
+	font-family: 'Times New Roman', Times, serif;
+	font-weight: 800;
+	font-size: 18;
+	/*text-align: center;*/
+}
+.titre{
+	font-weight: 800;
+	margin-right: 10;
+}
+.contenant{
+	font-weight: 100;
+	margin-right: 10;
+}
+table{
+	text-align: center;
+	border-spacing: 5px;
+}
+h2.test{
+	font-size: 1.2rem;;
+	text-align: left;
+}
+table.p1{
+	background-color: rgba(255, 255, 255, 0.35); /* ajuste le dernier chiffre (0..1) pour plus ou moins de transparence */
+    color: black;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+table.p2{
+	background-color: rgba(255, 255, 255, 0.35); /* ajuste le dernier chiffre (0..1) pour plus ou moins de transparence */
+    color: black;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    margin-left: 400;
+}
+div{
+	display: flex;
+    gap: 16px;            /* espace entre les tables */
+    align-items: flex-start; /* ou center pour centrer verticalement */
+    flex-wrap: wrap; 
+    margin-top: 250;
+    margin-left: 500;
+}
+h2.trait{
+	color: white;
+	opacity: 0;
+}

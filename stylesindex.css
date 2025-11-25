@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+h1{
+	text-align: center;
+	font-family: 'Press Start 2P', monospace;
+  	font-size: 40px;      
+  	line-height: 1.1;
+  	letter-spacing: 0.02em;
+  	text-transform: none;
+  	-webkit-font-smoothing: none; 
+  	-moz-osx-font-smoothing: grayscale;
+  	text-rendering: optimizeSpeed;
+  	image-rendering: pixelated;
+  	color: black;
+	margin-top: 25;
+	}
+html{
+	background-image: url("backgroundimg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+a.jouer{
+	margin-left: 770;
+	font-size: 45;
+	color: white;
+	outline: none;
+	text-decoration: none;
+	font-family: 'Press Start 2P', monospace;
+	font-weight: 0;
+	margin-top: 50;
+
+}
+.jouer:hover{
+	color: #2738F5;
+	color: #8C4106;
+}
+a.jouer2{
+	margin-left: 770;
+	font-size: 45;
+	color: white;
+	outline: none;
+	text-decoration: none;
+	font-family: 'Press Start 2P', monospace;
+	font-weight: 0;
+	margin-top: 50;
+
+}
+.jouer2:hover{
+	color: #5d8a1a;
+}
+a.jouer3{
+	margin-left: 770;
+	font-size: 45;
+	color: white;
+	outline: none;
+	text-decoration: none;
+	font-family: 'Press Start 2P', monospace;
+	font-weight: 0;
+	margin-top: 50;
+
+}
+.jouer3:hover{
+	color: #7ba3ad;
+}
