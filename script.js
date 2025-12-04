@@ -36,6 +36,11 @@ const player = document.getElementById("player1");
 const hpp1html = document.getElementById("hpp1");
 const hpp2html = document.getElementById("hpp2");
 
+const limitegauche = -25;
+const limiteright = 1755;
+const limitetop = -35;
+const limitedown = 765;
+
 var bruitdepas = new Audio('pasleger.mp3');
 var ambiance = new Audio('ambiance.mp3');
 var explosion = new Audio('explosion.mp3');
@@ -134,6 +139,25 @@ function movePlayer1(direction){
 	}
 	player.style.left = left + "px";
 	player.style.top = top + "px";
+
+
+		if(left < limitegauche){
+			player.style.left = "-25px";
+			console.log("Player 1 were blocked ! (left) (" + left + ")");
+		}
+		if(left > limiteright){
+			player.style.left = "1755px";
+			console.log("Player 1 were blocked ! (right) (" + left + ")");
+		}
+		if(top < limitetop){
+			player.style.top = "-35px";
+			console.log("Player 1 were blocked ! (up) (" + top + ")");
+		}
+		if(top > limitedown){
+			player.style.top = "765px";
+			console.log("Player 1 were blocked ! (down) (" + top + ")");
+		}
+
 }
 
 
@@ -402,6 +426,23 @@ function movePlayer2(direction){
 	}
 	player2.style.left = left2 + "px";
 	player2.style.top = top2 + "px";
+
+		if(left2 < limitegauche){
+			player2.style.left = "-25px";
+			console.log("Player 2 were blocked ! (left) (" + left + ")");
+		}
+		if(left2 > limiteright){
+			player2.style.left = "1755px";
+			console.log("Player 2 were blocked ! (right) (" + left + ")");
+		}
+		if(top2 < limitetop){
+			player2.style.top = "-35px";
+			console.log("Player 2 were blocked ! (up) (" + top + ")");
+		}
+		if(top2 > limitedown){
+			player2.style.top = "765px";
+			console.log("Player 2 were blocked ! (down) (" + top + ")");
+		}
 }
 
 //SORTS J2
