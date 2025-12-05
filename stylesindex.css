@@ -11,18 +11,18 @@ h1{
   	-moz-osx-font-smoothing: grayscale;
   	text-rendering: optimizeSpeed;
   	image-rendering: pixelated;
-  	color: black;
+  	color: #F2C76E;
 	margin-top: 25;
 	}
 html{
-	background-image: url("backgroundimg.jpg");
+	background-image: url("backgroundgif.gif");
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 a.jouer{
-	margin-left: 770;
+	margin-left: 750;
 	font-size: 45;
-	color: white;
+	color: #F8F5E8;
 	outline: none;
 	text-decoration: none;
 	font-family: 'Press Start 2P', monospace;
@@ -31,64 +31,5 @@ a.jouer{
 
 }
 .jouer:hover{
-	color: #2738F5;
-	color: #8C4106;
-	color: #331914;
-}
-a.jouer2{
-	margin-left: 770;
-	font-size: 45;
-	color: white;
-	outline: none;
-	text-decoration: none;
-	font-family: 'Press Start 2P', monospace;
-	font-weight: 0;
-	margin-top: 50;
-
-}
-.jouer2:hover{
-	color: #5d8a1a;
-}
-a.jouer3{
-	margin-left: 770;
-	font-size: 45;
-	color: white;
-	outline: none;
-	text-decoration: none;
-	font-family: 'Press Start 2P', monospace;
-	font-weight: 0;
-	margin-top: 50;
-
-}
-.jouer3:hover{
-	color: #7ba3ad;
-}
-a.jouer4{
-	margin-left: 770;
-	font-size: 45;
-	color: white;
-	outline: none;
-	text-decoration: none;
-	font-family: 'Press Start 2P', monospace;
-	font-weight: 0;
-	margin-top: 50;
-
-}
-.jouer4:hover{
 	color: black;
-}
-a.jouer5{
-	margin-left: 770;
-	font-size: 45;
-	color: white;
-	outline: none;
-	text-decoration: none;
-	font-family: 'Press Start 2P', monospace;
-	font-weight: 0;
-	margin-top: 50;
-
-}
-.jouer5:hover{
-	color: #331914;
-	color: #8C4106;
 }
