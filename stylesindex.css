@@ -33,3 +33,13 @@ a.jouer{
 .jouer:hover{
 	color: black;
 }
+a.version{
+	color: white;
+	margin-top: 450;
+	margin-left: -1200;
+	font-family: Andale Mono, monospace;
+}
+.box{
+	display: flex;
+	flex-wrap: wrap;
+}
