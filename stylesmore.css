@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+h1{
+	text-align: center;
+	font-family: 'Press Start 2P', monospace;
+  	font-size: 40px;      
+  	line-height: 1.1;
+  	letter-spacing: 0.02em;
+  	text-transform: none;
+  	-webkit-font-smoothing: none; 
+  	-moz-osx-font-smoothing: grayscale;
+  	text-rendering: optimizeSpeed;
+  	image-rendering: pixelated;
+  	color: #F2C76E;
+	margin-top: 25;
+	}
+html{
+	background-image: url("backgroundgif.gif");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+button{
+	border-radius: 20%;
+	background-image: url("backgroundgif.gif");
+	color: white;
+	border-color: white;
+	font-size: 15;
+}
