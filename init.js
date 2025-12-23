@@ -5,7 +5,8 @@ const datamain = {
     { name: "backgroundimgingame", url: "../Design/backgroundimg.jpg" },
     { name: "bluemage", url: "../Design/bluemage.png" },
     { name: "greenmage", url: "../Design/greenmage.png" },
-    { name: "redmage", url: "../Design/redmage.png" }
+    { name: "redmage", url: "../Design/redmage.png" },
+    { name: "knight", url: "../Design/knight.png"}
   ],
 
   audios: [
