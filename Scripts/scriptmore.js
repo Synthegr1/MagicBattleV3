@@ -1,4 +1,5 @@
-const ambiance = new Audio('lobby.mp3');
+const ambiance = new Audio("Audio/lobby.mp3");
+
 let ambianceStarted = false;
 
 window.alert("Press any key for start !");

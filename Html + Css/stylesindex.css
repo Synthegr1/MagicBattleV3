@@ -15,7 +15,7 @@ h1{
 	margin-top: 25;
 	}
 html{
-	background-image: url("backgroundgif.gif");
+	background-image: url("../Design/backgroundgif.gif");
 	background-repeat: no-repeat;
 	background-size: cover;
 }

@@ -41,12 +41,12 @@ const limiteright = 1755;
 const limitetop = -35;
 const limitedown = 765;
 
-var bruitdepas = new Audio('pasleger.mp3');
-var ambiance = new Audio('ambiance.mp3');
-var explosion = new Audio('explosion.mp3');
-var fire = new Audio('fire.mp3');
-var punch = new Audio('punch.mp3');
-var magicbow = new Audio('magicbow.mp3');
+var bruitdepas = new Audio('../Audio/pasleger.mp3');
+var ambiance = new Audio('../Audio/ambiance.mp3');
+var explosion = new Audio('../Audio/explosion.mp3');
+var fire = new Audio('../Audio/fire.mp3');
+var punch = new Audio('../Audio/punch.mp3');
+var magicbow = new Audio('../Audio/magicbow.mp3');
 
 document.addEventListener("keydown", inputPlayer1);
 

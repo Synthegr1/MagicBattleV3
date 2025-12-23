@@ -29,7 +29,7 @@ img.player2{
     top: 325px;     
 }
 html{
-	background-image: url("backgroundimg.jpg");
+	background-image: url("../Design/backgroundimg.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	}
