@@ -1,8 +1,7 @@
-const ambiance = new Audio("Audio/lobby.mp3");
+const ambiancedata = datamain.audios.find(a => a.name === "birdsound");
+const ambiance = new Audio(ambiancedata.url);
 
 let ambianceStarted = false;
-
-window.alert("Press any key for start !");
 
 document.addEventListener("click", () => {
     if (!ambianceStarted) {
