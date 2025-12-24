@@ -12,6 +12,12 @@ const bz1data = datamain.inputplayer1.find(k => k.name === "spell2");
 const be1data = datamain.inputplayer1.find(r => r.name === "spell3");
 const br21data = datamain.inputplayer1.find(l => l.name === "spell4")
 
+const br2data = datamain.inputplayer2.find(b => b.name === "mover");
+const bl2data = datamain.inputplayer2.find(m => m.name === "movel");
+const bt2data = datamain.inputplayer2.find(t => t.name === "movet");
+const bd2data = datamain.inputplayer2.find(f => f.name === "moved");
+const bj2data = datamain.inputplayer2.find(j => j.name === "spell1");
+
 const buttonright = br1data.key;
 const buttonleft = bl1data.key;
 const buttontop = bt1data.key;
@@ -21,10 +27,10 @@ const buttonz = bz1data.key;
 const buttone = be1data.key;
 const buttonr = br21data.key;
 
-const buttonright2 = "KeyV";
-const buttonleft2 = "KeyC";
-const buttontop2 = "KeyZ";
-const buttondown2 = "KeyX";
+const buttonright2 = br2data.key;
+const buttonleft2 = bl2data.key;
+const buttontop2 = bt2data.key;
+const buttondown2 = bd2data.key;
 const buttonj = "KeyJ";
 const buttonk = "KeyK";
 const buttonl = "KeyL";

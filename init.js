@@ -29,13 +29,20 @@ const datamain = {
     { name: "spell2", key: "KeyW" },
     { name: "spell3", key: "KeyE" },
     { name: "spell4", key: "KeyR" },
-    { name: "movet", key: "ArrowUp"  },
+    { name: "movet", key: "ArrowUp" },
     { name: "moved", key: "ArrowDown" },
     { name: "mover", key: "ArrowRight" },
     { name: "movel", key: "ArrowLeft"}
   ],
 
   inputplayer2:[
-    
+    { name: "spell1", key: "KeyJ" },
+    { name: "spell2", key: "KeyK" },
+    { name: "spell3", key: "KeyL" },
+    { name: "spell4", key: "Semicolon" },
+    { name: "movet", key: "KeyZ" },
+    { name: "moved", key: "KeyX" },
+    { name: "mover", key: "KeyV" },
+    { name: "movel", key: "KeyC"}
   ]
 };
