@@ -1,14 +1,25 @@
 //PLAYER 1
 
 //VARIABLES
-const buttonright = "ArrowRight";
-const buttonleft = "ArrowLeft";
-const buttontop = "ArrowUp";
-const buttondown = "ArrowDown";
-const buttona = "KeyQ";
-const buttonz = "KeyW";
-const buttone = "KeyE";
-const buttonr = "KeyR";
+console.log("datamain = " + datamain)
+
+const br1data = datamain.inputplayer1.find(x => x.name === "mover");
+const bl1data = datamain.inputplayer1.find(s => s.name === "movel");
+const bt1data = datamain.inputplayer1.find(w => w.name === "movet");
+const bd1data = datamain.inputplayer1.find(t => t.name === "moved");
+const ba1data = datamain.inputplayer1.find(g => g.name === "spell1");
+const bz1data = datamain.inputplayer1.find(k => k.name === "spell2");
+const be1data = datamain.inputplayer1.find(r => r.name === "spell3");
+const br21data = datamain.inputplayer1.find(l => l.name === "spell4")
+
+const buttonright = br1data.key;
+const buttonleft = bl1data.key;
+const buttontop = bt1data.key;
+const buttondown = bd1data.key;
+const buttona = ba1data.key;
+const buttonz = bz1data.key;
+const buttone = be1data.key;
+const buttonr = br21data.key;
 
 const buttonright2 = "KeyV";
 const buttonleft2 = "KeyC";
@@ -41,12 +52,19 @@ const limiteright = 1755;
 const limitetop = -35;
 const limitedown = 765;
 
-var bruitdepas = new Audio('../Audio/pasleger.mp3');
-var ambiance = new Audio('../Audio/ambiance.mp3');
-var explosion = new Audio('../Audio/explosion.mp3');
-var fire = new Audio('../Audio/fire.mp3');
-var punch = new Audio('../Audio/punch.mp3');
-var magicbow = new Audio('../Audio/magicbow.mp3');
+const bowData = datamain.audio.find(f => f.name === "bowshout");
+const pasData = datamain.audio.find(a => a.name === "footsteps");
+const ambianceData = datamain.audio.find(b => b.name === "musicingame");
+const explosionData = datamain.audio.find(c => c.name === "explosion");
+const fireData = datamain.audio.find(d => d.name === "fireshout");
+const punchData = datamain.audio.find(e => e.name === "punchsound");
+
+var bruitdepas = new Audio(pasData.url);
+var ambiance = new Audio(ambianceData.url);
+var explosion = new Audio(explosionData.url);
+var fire = new Audio(fireData.url);
+var punch = new Audio(punchData.url);
+var magicbow = new Audio(bowData.url);
 
 document.addEventListener("keydown", inputPlayer1);
 
@@ -60,7 +78,7 @@ let ambianceStarted = false;
 
 //FONCTIONS
 //Lancement de l'audio
-window.alert("Welcome to Magical Battles, defeat your opponent!");
+//window.alert("Welcome to Magical Battles, defeat your opponent!");
 document.addEventListener("keydown", function startAmbiance() {
     if (!ambianceStarted) {
 		ambiance.play().catch(e => console.log("Audio error : ", e));
@@ -81,6 +99,7 @@ function movePlayer1(direction){
 
 	switch (direction){
 		case "top":
+			console.log("From datamain = ", bt1data);
 			mana1htmlelement.innerText = manaplayer1;
 			mana1htmlelement.style.color = "white";
 			if(manaplayer1 < 50){
@@ -94,7 +113,9 @@ function movePlayer1(direction){
 			console.log("Move up -- vertical position = " + top);
 			bruitdepas.play();
 			break;
+
 		case "bottom":
+			console.log("From datamain = ", bd1data);
 			mana1htmlelement.innerText = manaplayer1;
 			mana1htmlelement.style.color = "white";
 			if(manaplayer1 < 50){
@@ -109,6 +130,7 @@ function movePlayer1(direction){
 			bruitdepas.play();
 			break;
 		case "left":
+			console.log("From datamain = ", bl1data);
 			mana1htmlelement.innerText = manaplayer1;
 			mana1htmlelement.style.color = "white";
 			if(manaplayer1 < 50){
@@ -123,6 +145,7 @@ function movePlayer1(direction){
 			bruitdepas.play();
 			break;
 		case "right":
+			console.log("From datamain = ", br1data);
 			mana1htmlelement.innerText = manaplayer1;
 			mana1htmlelement.style.color = "white";
 			if(manaplayer1 < 50){
@@ -166,6 +189,7 @@ function spellPlayer1(spell){
 	
 	switch (spell){
 		case "a":
+			console.log("From datamain = ", ba1data);
 			mana1htmlelement.style.color = "white"; 
 			mana1htmlelement.innerText = manaplayer1; //Ecriture dans l'HTML
 			manaplayer1calcul = manaplayer1 - 25; // Calcul du mana après le sort
@@ -214,6 +238,7 @@ function spellPlayer1(spell){
 			}
 
 		case "z":
+			console.log("From datamain = ", bz1data);
 			mana1htmlelement.style.color = "white";
 			mana1htmlelement.innerText = manaplayer1;
 			manaplayer1calcul = manaplayer1 - 15;
@@ -260,6 +285,7 @@ function spellPlayer1(spell){
 			}
 
 		case "e":
+			console.log("From datamain = ", be1data);
 			mana1htmlelement.style.color = "white";
 			mana1htmlelement.innerText = manaplayer1;
 			manaplayer1calcul = manaplayer1 - 5;
@@ -306,6 +332,7 @@ function spellPlayer1(spell){
 			}
 
 		case "r":
+			console.log("From datamain = ", br21data);
 			mana1htmlelement.style.color = "white";
 			mana1htmlelement.innerText = manaplayer1;
 			manaplayer1calcul = manaplayer1 - 10;

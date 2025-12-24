@@ -9,7 +9,7 @@ const datamain = {
     { name: "knight", url: "../Design/knight.png"}
   ],
 
-  audios: [
+  audio: [
     { name: "musicingame", url: "../Audio/ambiance.mp3" },
     { name: "explosion", url: "../Audio/explosion.mp3" },
     { name: "fireshout", url: "../Audio/fire.mp3" },
@@ -22,5 +22,20 @@ const datamain = {
   scripts: [
     { name: "scriptingame", url: "../Scripts/script.js" },
     { name: "scriptlobby", url: "../Scripts/scriptmore.js" }
+  ],
+
+  inputplayer1: [
+    { name: "spell1", key: "KeyQ" },
+    { name: "spell2", key: "KeyW" },
+    { name: "spell3", key: "KeyE" },
+    { name: "spell4", key: "KeyR" },
+    { name: "movet", key: "ArrowUp"  },
+    { name: "moved", key: "ArrowDown" },
+    { name: "mover", key: "ArrowRight" },
+    { name: "movel", key: "ArrowLeft"}
+  ],
+
+  inputplayer2:[
+    
   ]
 };
