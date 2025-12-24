@@ -17,6 +17,9 @@ const bl2data = datamain.inputplayer2.find(m => m.name === "movel");
 const bt2data = datamain.inputplayer2.find(t => t.name === "movet");
 const bd2data = datamain.inputplayer2.find(f => f.name === "moved");
 const bj2data = datamain.inputplayer2.find(j => j.name === "spell1");
+const bk2data = datamain.inputplayer2.find(n => n.name === "spell2");
+const bl22data = datamain.inputplayer2.find(k => k.name === "spell3");
+const bm2data = datamain.inputplayer2.find(y => y.name === "spell4");
 
 const buttonright = br1data.key;
 const buttonleft = bl1data.key;
@@ -31,10 +34,10 @@ const buttonright2 = br2data.key;
 const buttonleft2 = bl2data.key;
 const buttontop2 = bt2data.key;
 const buttondown2 = bd2data.key;
-const buttonj = "KeyJ";
-const buttonk = "KeyK";
-const buttonl = "KeyL";
-const buttonm = "Semicolon";
+const buttonj = bj2data.key;
+const buttonk = bk2data.key;
+const buttonl = bl22data.key;
+const buttonm = bm2data.key;
 
 const output = document.getElementById("outputtext");
 const output2 = document.getElementById("outputtext2");
@@ -401,6 +404,7 @@ function movePlayer2(direction){
 
 	switch (direction){
 		case "top":
+			console.log("From datamain = ", bt2data);
 			mana2htmlelement.innerText = manaplayer2;
 			mana1htmlelement.style.color = "white";
 			if(manaplayer2 < 50){
@@ -415,6 +419,7 @@ function movePlayer2(direction){
 			bruitdepas.play();
 			break;
 		case "bottom":
+			console.log("From datamain = ", bd2data);
 			mana2htmlelement.innerText = manaplayer2;
 			mana2htmlelement.style.color = "white";
 			if(manaplayer2 < 50){
@@ -429,6 +434,7 @@ function movePlayer2(direction){
 			bruitdepas.play();
 			break;
 		case "left":
+			console.log("From datamain = ", bl2data);
 			mana2htmlelement.innerText = manaplayer2;
 			mana2htmlelement.style.color = "white";
 			if(manaplayer2 < 50){
@@ -443,6 +449,7 @@ function movePlayer2(direction){
 			bruitdepas.play();
 			break;
 		case "right":
+			console.log("From datamain = ", br2data);
 			mana1htmlelement.innerText = manaplayer1;
 			mana1htmlelement.style.color = "white";
 			if(manaplayer2 < 50){
@@ -483,6 +490,7 @@ function spellPlayer2(spell){
 	
 	switch (spell){
 		case "j":
+			console.log("From datamain = ", bj2data);
 			mana1htmlelement.style.color = "white";
 			mana1htmlelement.innerText = manaplayer2;
 			manaplayer2calcul = manaplayer2 - 25;
@@ -528,6 +536,7 @@ function spellPlayer2(spell){
 				break;
 			}
 		case "k":
+			console.log("From datamain = ", bk2data);
 			mana2htmlelement.style.color = "white";
 			mana2htmlelement.innerText = manaplayer2;
 			manaplayer2calcul = manaplayer2 - 15;
@@ -572,6 +581,7 @@ function spellPlayer2(spell){
 				break;
 			}
 		case "l":
+			console.log("From datamain = ", bl22data);
 			mana2htmlelement.style.color = "white";
 			mana2htmlelement.innerText = manaplayer2;
 			manaplayer2calcul = manaplayer2 - 5;
@@ -617,6 +627,7 @@ function spellPlayer2(spell){
 				break;
 			}
 		case "m":
+			console.log("From datamain = ", bm2data);
 			mana2htmlelement.style.color = "white";
 			mana2htmlelement.innerText = manaplayer2;
 			manaplayer2calcul = manaplayer2 - 10;
