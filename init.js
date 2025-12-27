@@ -6,7 +6,8 @@ const datamain = {
     { name: "bluemage", url: "../Design/bluemage.png" },
     { name: "greenmage", url: "../Design/greenmage.png" },
     { name: "redmage", url: "../Design/redmage.png" },
-    { name: "knight", url: "../Design/knight.png"}
+    { name: "knight", url: "../Design/knight.png"},
+    { name: "bleumagemove", url: "../Design/bleumagemove.gif"}
   ],
 
   audio: [
