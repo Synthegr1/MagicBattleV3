@@ -21,6 +21,12 @@ const bk2data = datamain.inputplayer2.find(n => n.name === "spell2");
 const bl22data = datamain.inputplayer2.find(k => k.name === "spell3");
 const bm2data = datamain.inputplayer2.find(y => y.name === "spell4");
 
+const dataBluemagemove = datamain.pictures.find(t => t.name === "bleumagemove")
+const dataBleumage = datamain.pictures.find(u => u.name === "bluemage");
+
+const bluemagemove = dataBluemagemove.url;
+const bluemage = dataBleumage.url;
+
 const buttonright = br1data.key;
 const buttonleft = bl1data.key;
 const buttontop = bt1data.key;
@@ -88,6 +94,7 @@ let ambianceStarted = false;
 //FONCTIONS
 //Lancement de l'audio
 //window.alert("Welcome to Magical Battles, defeat your opponent!");
+console.log(bluemagemove);
 document.addEventListener("keydown", function startAmbiance() {
     if (!ambianceStarted) {
 		ambiance.play().catch(e => console.log("Audio error : ", e));
@@ -108,6 +115,11 @@ function movePlayer1(direction){
 
 	switch (direction){
 		case "top":
+			setTimeout(() => {
+				player.src = bluemage;
+			}, 1000);
+			player.src = bluemagemove;
+
 			console.log("From datamain = ", bt1data);
 			mana1htmlelement.innerText = manaplayer1;
 			mana1htmlelement.style.color = "white";
@@ -124,6 +136,11 @@ function movePlayer1(direction){
 			break;
 
 		case "bottom":
+			setTimeout(() => {
+				player.src = bluemage;
+			}, 1000);
+			player.src = bluemagemove;
+
 			console.log("From datamain = ", bd1data);
 			mana1htmlelement.innerText = manaplayer1;
 			mana1htmlelement.style.color = "white";
@@ -139,6 +156,11 @@ function movePlayer1(direction){
 			bruitdepas.play();
 			break;
 		case "left":
+			setTimeout(() => {
+				player.src = bluemage;
+			}, 1000);
+			player.src = bluemagemove;
+
 			console.log("From datamain = ", bl1data);
 			mana1htmlelement.innerText = manaplayer1;
 			mana1htmlelement.style.color = "white";
@@ -154,6 +176,11 @@ function movePlayer1(direction){
 			bruitdepas.play();
 			break;
 		case "right":
+			setTimeout(() => {
+				player.src = bluemage;
+			}, 1000);
+			player.src = bluemagemove;
+
 			console.log("From datamain = ", br1data);
 			mana1htmlelement.innerText = manaplayer1;
 			mana1htmlelement.style.color = "white";
