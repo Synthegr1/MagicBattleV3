@@ -130,9 +130,16 @@ function movePlayer1(direction){
 			mana1htmlelement.innerText = manaplayer1;
 			output.style.color = "green";
 			output.innerText = "Move top";
-			top = top - speed;
 			console.log("Move up -- vertical position = " + top);
 			bruitdepas.play();
+				for(let i = 0; i < 10; i++){
+					setTimeout(() => {
+						player.style.top = top + "px";
+						top = top - speed;
+						console.log(i);
+					}, "1000");	
+				}
+
 			break;
 
 		case "bottom":
