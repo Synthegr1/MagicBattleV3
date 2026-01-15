@@ -13,5 +13,11 @@ document.addEventListener("click", () => {
 });
 
 function returnMain(){
-	window.location.href = "index.html";
+	window.location.href = "../index.html";
+}
+function goPlay(){
+    window.location.href = "Html + Css/play.html";
+}
+function goSettings(){
+    window.location.href = "Html + Css/more.html";
 }

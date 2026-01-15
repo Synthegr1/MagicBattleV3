@@ -35,8 +35,9 @@ a.jouer{
 }
 a.version{
 	color: white;
-	margin-top: 450;
-	margin-left: -1200;
+	/*margin-top: 450;
+	margin-left: -1200;*/
+	margin-top: 800;
 	font-family: Andale Mono, monospace;
 }
 .box{
