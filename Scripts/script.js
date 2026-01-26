@@ -132,12 +132,13 @@ function movePlayer1(direction){
 			output.innerText = "Move top";
 			console.log("Move up -- vertical position = " + top);
 			bruitdepas.play();
-				for(let i = 0; i < 10; i++){
-					setTimeout(() => {
-						player.style.top = top + "px";
-						top = top - speed;
+
+			for(let i = 0; i < 10; i++){
+					setTimeout(function(){
 						console.log(i);
-					}, "1000");	
+						top = top - 5;
+						player.style.top = top + "px";
+					}, 1000);
 				}
 
 			break;
@@ -746,7 +747,7 @@ function inputPlayer1(e){
 		console.log("The player 1 use a Magic Bow");
 	}
 
-	//PLAYER1
+	//PLAYER 2
 	if(e.code == buttontop2){
 		movePlayer2("top");
 		console.log("Input : " + buttontop2);
