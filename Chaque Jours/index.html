@@ -5,7 +5,11 @@
 	<body>
 		<canvas id="canva" width="7920" height="100">Test</canvas>
 		<button id="refresh" onclick="main()">Refresh</button>
+		<button class="test" onclick="showMatrice()">Show Matrice</button>
+		<button class="rend" onclick="render()">Render</button>
+
 		<script>
+			const matric = [];
 
 			let player_x = 0;
 			let player_y = 0;
@@ -33,8 +37,42 @@
 
 			document.addEventListener("keydown", logKey);
 
+
+			//-- Push dans la matrice --//
+
+			function matricPush(x, y, color){
+				console.log("Matrice Push");
+
+				matric.push(x);
+				matric.push(y);
+				matric.push(color);	
+			}
+
+
+			//-- Fonction afficher la Matrice --//
+
+			function render(){
+				let x;
+				let y;
+				let color;
+
+				for(let i = 0; i < matric.length; i += 3){
+					//console.log("RENDER")
+
+					x = matric[i];
+					y = matric[i + 1];
+					color = matric[i + 2];
+
+					ctx.fillStyle = color;
+					ctx.fillRect(x, y, 20, 20);
+				}
+			}
+
+
+			//-- Touches clavier --//
+
 			function logKey(e) {
-				console.log(e.code);
+				//console.log(e.code);
 				let f;
 
 				if(e.code == "ArrowUp"){
@@ -51,44 +89,28 @@
 					f = 4;
 				} 
 
-				move(f);
+				render();
+				move();
 
 			}
+
+
+			//-- Random tt ce kya de plus normal --//
 
 			function random(max) {
   				return Math.floor(Math.random() * max);
 			}
 
-			function move(x){
-				let colors = ["green", "#108C07", "#544021"];
 
-				let b = 1;
+			//-- Déplacer le pixel du joueur --//
 
-				if(random(12) == 3){
-					b = 0;
-				}
-				if(random(100) == 67){
-					b = 2;
-				}
-
-				if(x == 0){
-					ctx.fillStyle = colors[b];
-					ctx.fillRect(player_x, player_y - 20, 20, 20);
-				} else if(x == 1){
-					ctx.fillStyle = colors[b];
-					ctx.fillRect(player_x - 20, player_y, 20, 20);
-				} else if(x == 3){
-					ctx.fillStyle = colors[b];
-					ctx.fillRect(player_x, player_y + 20, 20, 20);
-				} else if(x == 4){
-					ctx.fillStyle = colors[b];
-					ctx.fillRect(player_x + 20, player_y, 20, 20);
-				}
-
+			function move(){
 				ctx.fillStyle = "yellow";
 				ctx.fillRect(player_x, player_y, 20, 20);
-				
 			}
+
+
+			//-- Génération du sol --//
 
 			function get_sol(){
 				let cerise = 0;
@@ -96,151 +118,198 @@
 				let size = window.innerWidth;
 				m = 35;
 				//console.log(size);
-				for(let f = 0; f < window.innerHeight; f += 40){
-					for(let i = 0; i < size; i += 40){
+				for(let f = 0; f < window.innerHeight; f += 20){
+					for(let i = 0; i < size; i += 20){
 						ctx.fillStyle = "#108C07";
-						ctx.fillRect(i, f, 40, 40);
+						ctx.fillRect(i, f, 20, 20);
+
+						matricPush(i, f, "#108C07");
+
 						//console.log(i);
 					}
 					let colors = ["#14920B", "#0B7A04"];
 					let b = false;
 
-					if(random(2) == 1 && number < m){
-						ctx.fillStyle = colors[random(2)];
-						ctx.fillRect(random(size), f, 20, 20)
+					if(random(10) == 1 && number < m){
+						let k = random(2);
+						let h = random(size);
+
+						ctx.fillStyle = colors[k];
+						ctx.fillRect(h, f, 20, 20)
+
+						matricPush(h, f, colors[k]);
+
 						b = true;
 						number += 1;
 					} else {
 						continue;
 					}
 
-					if(b && random(4) == 2 && number < m){
+					if(b && random(12) == 2 && number < m){
+						let k = random(size);
+
 						ctx.fillStyle = "#0C6F05";
-						ctx.fillRect(random(size), f, 20, 20)
+						ctx.fillRect(k, f, 20, 20)
 						number += 1;
+
+						matricPush(k, f, "#0C6F05");
+
 					} else {
 						continue;
 					}
 
 					if(random(15) == 4){
+						let k = random(size);
+
 						ctx.fillStyle = "grey";
-						ctx.fillRect(random(size), f, 20, 20)
+						ctx.fillRect(k, f, 20, 20)
+
+						matricPush(k, f, "grey");
+
 					}
-					 else if(random(7) == 4){
+					 else if(random(12) == 4){
+						let k = random(size);
+
 						ctx.fillStyle = "#544021";
-						ctx.fillRect(random(size), f, 20, 20)
+						ctx.fillRect(k, f, 20, 20)
+
+						matricPush(k, f, "#544021");
+
 					}
 				}
 			}
 
+
+			//-- Génération des arbres --//
+
 			function drawTree(p){
-				let n = random(window.innerHeight);
+				let n = random(window.innerHeight - 200);
 
 				let cerise = 0;
 				let f = 100;
 				let x = n;
 
-				for(let i = f + 40; i < 5 * 40 + 1; i += 40){
+				for(let i = f + 40; i < 5 * 40 + 1; i += 20){
 					ctx.fillStyle = "#034406";
-					ctx.fillRect(i + p, x, 20, 20)
-					i -= 20;
+					ctx.fillRect(i + p, x, 20, 20);
+					matricPush(i + p, x, "#034406");
 				}
 
-				x += 15;
+				x += 20;
 
-				for(let i = f + 20; i < 5.5 * 40 + 1; i += 40){
+				for(let i = f + 20; i < 5.5 * 40 + 1; i += 20){ //LA
 					if(random(12) == 3 && cerise < 3){
 						ctx.fillStyle = "red";
-						ctx.fillRect(i + p, x, 20, 20)
-						i -= 20;
+						ctx.fillRect(i + p, x, 20, 20);
+						matricPush(i + p, x, "red");
 						cerise += 1;
 					} else {
 						ctx.fillStyle = "#034406";
-						ctx.fillRect(i + p, x, 20, 20)
-						i -= 20;
+						ctx.fillRect(i + p, x, 20, 20);
+						matricPush(i + p, x, "#034406");
 					}
 				}
 
-				x += 15;
+				x += 20;
 
 				for(let o = 0; o < 4; o++){
-					for(let i = f; i < 6 * 40 + 1; i += 40){
+					for(let i = f; i < 6 * 40 + 1; i += 20){ //LA
 						if(random(12) == 3 && cerise < 3){
 							ctx.fillStyle = "red";
 							ctx.fillRect(i + p, x, 20, 20)
-							i -= 20;
+							matricPush(i + p, x, "red");
 							cerise += 1;
 						} else {
 							ctx.fillStyle = "#034406";
 							ctx.fillRect(i + p, x, 20, 20)
-							i -= 20;
+							matricPush(i + p, x, "#034406");
 						}
 					}
 
-					x += 15;
+					x += 20;
+					
 				}
 
-				for(let i = f + 20; i < 5.5 * 40 + 1; i += 40){
+				
+
+				for(let i = f + 20; i < 5.5 * 40 + 1; i += 20){
 					if(random(12) == 3 && cerise < 3){
 						ctx.fillStyle = "red";
 						ctx.fillRect(i + p, x, 20, 20)
-						i -= 20;
+						matricPush(i + p, x, "red");
 						cerise += 1;
 					} else {
 						ctx.fillStyle = "#034406";
 						ctx.fillRect(i + p, x, 20, 20)
-						i -= 20;
+						matricPush(i + p, x, "#034406");
 					}
 				}
 
-				x += 15;
+				x += 20;
 
-				for(let i = f + 40; i < 5 * 40 + 1; i += 40){
+				for(let i = f + 40; i < 5 * 40 + 1; i += 20){
 					ctx.fillStyle = "#034406";
 					ctx.fillRect(i + p, x, 20, 20)
-					i -= 20;
+					matricPush(i + p, x, "#034406");
 				}
 			}
+
+
+			//-- Génération du chemin --//
 
 			function draw_path(){
 				let colors = ["grey", "#B68A49", "#544021"];
 				let m = 0;
 
-				for(let i = 0; i < window.innerWidth; i += 40){
+				for(let i = 0; i < window.innerWidth; i += 20){
 					ctx.fillStyle = colors[2];
 					ctx.fillRect(i, window.innerHeight / 2, 20, 20);
-					i -= 20;
-					if(random(25) == 1){
-						ctx.fillStyle = colors[random(2 + 1)];
+
+					matricPush(i, window.innerHeight / 2, colors[2]);
+
+					if(random(100) == 1){
+						let k = random(2 + 1);
+
+						ctx.fillStyle = colors[k];
 						ctx.fillRect(i, window.innerHeight / 2, 20, 20);
+
+						matricPush(i, window.innerHeight / 2, colors[k]);
 					}
 				}
 				for(let t = 0; t < 8; t++){
-					for(let o = 0; o < window.innerWidth; o += 40){
+					for(let o = 0; o < window.innerWidth; o += 20){
 						let op = 1;
 
-						if(random(70) == 2){
+						if(random(100) == 2){
 							op = 0;
-						} else if(random(70) == 3){
+						} else if(random(100) == 3){
 							op = 2;
 						}
 						
 						ctx.fillStyle = colors[op];
 						ctx.fillRect(o, window.innerHeight / 2 + 20 + (t * 15), 20, 20);
+
+						matricPush(o, window.innerHeight / 2 + 20 + (t * 15), colors[op]);
+
 						m = window.innerHeight / 2 + 20 + (t * 15)
-						o -= 20;
 					}
 				}
-				for(let i = 0; i < window.innerWidth; i += 40){
+				for(let i = 0; i < window.innerWidth; i += 20){
 					ctx.fillStyle = colors[2];
 					ctx.fillRect(i, m + 20, 20, 20);
-					i -= 20;
-					if(random(25) == 1){
-						ctx.fillStyle = colors[random(2 + 1)];
+					matricPush(i, m + 20, colors[2]);
+					if(random(100) == 1){
+						let k = random(2 + 1);
+
+						ctx.fillStyle = colors[k];
 						ctx.fillRect(i, m + 20, 20, 20);
+						matricPush(i, m + 20, colors[k]);
 					}
 				}
 			}
+
+
+			//-- Génération des flaques d'eau --//
 
 			function draw_water(p, v, size){
 				m = p;
@@ -260,19 +329,32 @@
 				}
 			}
 
-			function main(){
 
+			//-- Afficher la Matrice dans un window alert --//
+
+			function showMatrice(){
+				window.alert(matric);
+			}
+
+
+
+			//-- Fonction principale (main()) --//
+
+			function main(){
+				matric.length = 0;
 				get_sol();
 				draw_path();
-
 				let w = 0;
 				for(let y = 0; y < random(4) + 1; y++){
 					if(w == 4) break;
-					drawTree(random(window.innerWidth));
+					drawTree(random(window.innerWidth - 200));
 					w += 1;
 				}
 				//draw_water(random(window.innerHeight), random(window.innerWidth), random(10));
+
+				//window.alert(matric);
 			}
+
 
 			main();
 
@@ -297,6 +379,24 @@
 				top: 10px;
 				left: 10px;
 				z-index: 10;
+				color: yellow;
+				background-color: white;
+			}
+			.test{
+				position: absolute;
+				top: 10px;
+				left: 75px;
+				z-index: 10;
+				color: red;
+				background-color: white;
+			}
+			.rend{
+				position: absolute;
+				top: 10px;
+				left: 175px;
+				z-index: 10;
+				color: blue;
+				background-color: white;
 			}
 			canvas { image-rendering: pixelated; }
 		</style>
